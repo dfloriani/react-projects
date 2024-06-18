@@ -1,0 +1,145 @@
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Red Hat Display", sans-serif;
+}
+
+.container {
+    width: 90%;
+    min-height: 90vh;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden; /* Ensure child elements don't overflow out of the container */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 2%;
+}
+
+.logo img {
+  border-radius: 50%;
+  height: 70px;
+  margin-right: 2%;
+}
+
+.themes {
+  display: flex;
+  gap: 5px;
+  margin: 2% 2%;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: black;
+  border: 1px solid grey;
+}
+
+.circle.grey {
+  background-color: grey;
+}
+
+.circle.light  {
+  background-color: white;
+}
+
+.circle.theme1 {
+  background: linear-gradient(90deg, hsla(191, 75%, 60%, 1) 0%, hsla(248, 87%, 36%, 1) 100%);
+}
+
+.active {
+  height: 40px;
+  width: 40px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+form {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 5px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  height: fit-content;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.list-header {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin-top: 2%;
+  gap: 2%;
+}
+
+.counter {
+  background-color: grey;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  align-content: center;
+}
+
+.list-body {
+  background-color: black;
+  width: 90%;
+  height: auto;
+  margin-top: 5%;
+  border-radius: 8px;
+}
+
+.first-line {
+  padding: 2%;
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+  color: white;
+}
+
+.second-line {
+  padding: 2%;
+  background-color: grey;
+  color: white;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

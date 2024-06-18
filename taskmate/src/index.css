@@ -1,0 +1,23 @@
+.dark {
+  background-color: black;
+  transition: all 500ms;
+}
+
+.grey {
+  background-color: grey;
+  transition: all 500ms;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.theme1 {
+  background: linear-gradient(
+    90deg,
+    hsla(191, 75%, 60%, 1) 0%,
+    hsla(248, 87%, 36%, 1) 100%
+  );
+  transition: all 500ms;
+}
