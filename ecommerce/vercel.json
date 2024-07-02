@@ -2,10 +2,15 @@
     "version": 2,
     "builds": [
       {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "build" }
+      },
+      {
         "src": "server.js",
         "use": "@vercel/node",
         "config": {
-          "includeFiles": "./data/db.json"
+          "includeFiles": ["./data/db.json"]
         }
       }
     ],
@@ -13,9 +18,11 @@
       {
         "src": "/api/(.*)",
         "dest": "server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
       }
-    ],
-    "rewrites": [
-        {"source": "/(.*)", "destination": "/"}
     ]
   }
+  
