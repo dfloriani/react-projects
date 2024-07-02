@@ -23,6 +23,7 @@ export const DropdownLoggedIn = ({setDropdown}) => {
             }
         }
         fetchUser();
+        // eslint-disable-next-line
     }, [])
 
   return (
