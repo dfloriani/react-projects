@@ -22,6 +22,14 @@
       {
         "src": "/(.*)",
         "dest": "/index.js"
+      },
+      {
+        "src": "/login",
+        "dest": "/api/server.js"
+      },
+      {
+        "src": "/register",
+        "dest": "/api/server.js"
       }
     ]
   }
