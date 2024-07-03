@@ -12,7 +12,7 @@ const ProductsList = ({title}) => {
   const [show, setShow] = useState(false);
   const search = useLocation().search;
   const searchTerm = new URLSearchParams(search).get("q");
-  const pageTitle = useTitle(title);
+  useTitle(title);
 
   useEffect(() => {
     async function fetchProducts() {

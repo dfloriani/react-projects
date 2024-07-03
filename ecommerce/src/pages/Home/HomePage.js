@@ -6,7 +6,7 @@ import Faq from "./components/Faq";
 import useTitle from '../../hooks/useTitle';
 
 const HomePage = ({title}) => {
-  const pageTitle = useTitle(title);
+  useTitle(title);
   return (
     <main>
       <Hero />

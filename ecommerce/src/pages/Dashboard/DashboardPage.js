@@ -7,7 +7,7 @@ import {toast} from "react-toastify";
 
 export const DashboardPage = ({title}) => {
   const [orders, setOrders] = useState([]);
-  const pageTitle = useTitle(title);
+  useTitle(title);
 
   useEffect(() => {
     async function getOrders() {

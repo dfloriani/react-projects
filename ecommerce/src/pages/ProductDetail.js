@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 const ProductDetail = ({title}) => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
-  const pageTitle = useTitle(title);
+  useTitle(title);
   const [inCart, setInCart] = useState(false);
   const { cartList, addToCart, removeFromCart } = useCart();
 
