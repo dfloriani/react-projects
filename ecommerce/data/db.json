@@ -237,14 +237,19 @@
       "best_seller": true
     }
   ],
-  "orders": [
-  ],
+  "orders": [],
   "users": [
     {
       "email": "dfloriani@gmail.com",
       "password": "$2a$10$v/o6bCtVzTJ.Kxnjrg43Ju6DW5ldZCAV95FG0cy07YXiOa7kieVzW",
       "name": "Dayane",
       "id": 2
+    },
+    {
+      "email": "test@example.com",
+      "password": "$2a$10$oIywBBXbLYDwsP9kCDwlP.V1wybuo6fvYf92eec.uACYrx1f/SBcu",
+      "name": "Test",
+      "id": 3
     }
   ]
 }
