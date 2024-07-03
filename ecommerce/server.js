@@ -1,8 +1,8 @@
-import express from 'express';
-import jsonServer from 'json-server';
-import auth from 'json-server-auth';
-import cors from 'cors';
-import path from 'path';
+const express = require('express');
+const jsonServer = require('json-server');
+const auth = require('json-server-auth');
+const cors = require('cors');
+const path = require('path');
 
 // Create express server
 const server = express();
