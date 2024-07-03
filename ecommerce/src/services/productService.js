@@ -1,5 +1,5 @@
 export async function getProductList(searchTerm){
-    const response = await fetch(`${process.env.REACT_APP_HOST}/products?name_like=${searchTerm ? searchTerm : ""}`);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/products?name_like=${searchTerm ? searchTerm : ""}`);
     if(!response.ok){
         let message = { message: response.statusText, status: response.status }
         throw message;
@@ -9,7 +9,7 @@ export async function getProductList(searchTerm){
 }
 
 export async function getProduct(id){
-    const response = await fetch(`${process.env.REACT_APP_HOST}/products/${id}`);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/products/${id}`);
     if(!response.ok){
         let message = { message: response.statusText, status: response.status }
         throw message;
@@ -19,7 +19,7 @@ export async function getProduct(id){
 }
 
 export async function getFeaturedList(){
-    const response = await fetch(`${process.env.REACT_APP_HOST}/featured_products`);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/featured_products`);
     if(!response.ok){
         let message = { message: response.statusText, status: response.status }
         throw message;

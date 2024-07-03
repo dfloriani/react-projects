@@ -10,7 +10,7 @@ export async function getUser(){
         method: "GET",
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${browserData.token}`}
     }
-    const response = await fetch(`${process.env.REACT_APP_HOST}/users/${browserData.cbid}`, requestOptions);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/users/${browserData.cbid}`, requestOptions);
     if(!response.ok){
         let message = { message: response.statusText, status: response.status }
         throw message;
@@ -25,7 +25,7 @@ export async function getUserOrders(){
         method: "GET",
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${browserData.token}`}
     }
-    const response = await fetch(`${process.env.REACT_APP_HOST}/orders?user.id=${browserData.cbid}`, requestOptions);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/orders?user.id=${browserData.cbid}`, requestOptions);
     if(!response.ok){
         let message = { message: response.statusText, status: response.status }
         throw message;
@@ -51,7 +51,7 @@ export async function createOrder(cartList, total, user){
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${browserData.token}` },
     body: JSON.stringify(order)
     }
-    const response = await fetch(`${process.env.REACT_APP_HOST}/orders`, requestOptions);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/orders`, requestOptions);
     if(!response.ok){
         let message = { message: response.statusText, status: response.status }
         throw message;
