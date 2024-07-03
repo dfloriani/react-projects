@@ -1,24 +1,33 @@
-import express from "express";
-import jsonServer from "json-server";
-import auth from "json-server-auth";
-import cors from "cors";
+import express from 'express';
+import jsonServer from 'json-server';
+import auth from 'json-server-auth';
+import cors from 'cors';
+import path from 'path';
 
-app.use(cors());
-
+// Create express server
 const server = express();
-server.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Headers', '*')
-    next()
-})
 
-const path = require('path');
+// Use CORS middleware
+server.use(cors({
+    origin: '*', // Allow all origins or specify your allowed origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+}));
+
+// Middleware to set CORS headers
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // Allow all origins or specify your allowed origin
+    res.header('Access-Control-Allow-Headers', '*'); // Adjust headers as needed
+    res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE'); // Allow these methods
+    next();
+});
+
+// Set up JSON server
 const dbFilePath = path.join(__dirname, 'data', 'db.json');
 const router = jsonServer.router(dbFilePath);
-server.use('/api', router);
-server.db = router.db
 
-const middlewares = jsonServer.defaults()
+// Use JSON Server and authentication middleware
+const middlewares = jsonServer.defaults();
 const rules = auth.rewriter({
     products: 444,
     featured_products: 444,
@@ -26,9 +35,15 @@ const rules = auth.rewriter({
     users: 600
 });
 
-server.use(rules)
-server.use(auth)
-server.use(middlewares)
-server.use(router)
+// Use middlewares
+server.use(rules);
+server.use(auth);
+server.use(middlewares);
+server.use('/api', router); // Ensure all API routes are prefixed with /api
+server.db = router.db;
 
-server.listen(4000);
+// Start the server
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
